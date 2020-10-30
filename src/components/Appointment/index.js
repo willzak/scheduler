@@ -32,7 +32,7 @@ export default function Appointment(props) {
         <Form
           name={""}
           interviewer={null}
-          interviewers={[]} //Will become props.interviewers
+          interviewers={props.interviewers}
           onSave={() => console.log('saved!')}
           onCancel={back}
         />
