@@ -19,10 +19,10 @@ const useVisualMode = (initial) => {
 
   const transition = (newMode, replace = false) => {
     if (replace) {
-      setHistory(replacer(history, newMode));
+      setHistory(prev => (replacer(prev, newMode)));
       setMode(newMode);
     } else {
-      setHistory([...history, newMode]);
+      setHistory(prev => ([...prev, newMode]));
       setMode(newMode);
     }
 

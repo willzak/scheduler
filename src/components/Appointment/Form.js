@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import InterviewerList from "../InterviewerList";
 import Button from "../Button";
-import action from '@storybook/addon-actions/dist/preview/action';
 
 export default function Form(props) {
 
@@ -17,6 +16,10 @@ export default function Form(props) {
   function cancel() {
     reset();
     props.onCancel();
+  }
+
+  function save() {
+    props.onSave(name, interviewer)
   }
 
   return(
@@ -38,7 +41,7 @@ export default function Form(props) {
           />
         </form>
         <InterviewerList 
-          interviewers={[]}
+          interviewers={props.interviewers}
           value={interviewer}
           onChange={setInterviewer}
         />
@@ -46,7 +49,7 @@ export default function Form(props) {
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button danger onClick={cancel}>Cancel</Button>
-          <Button confirm onClick={() => props.onSave(name, interviewer)}>Save</Button>
+          <Button confirm onClick={save}>Save</Button>
         </section>
       </section>
     </main>
