@@ -17,7 +17,7 @@ export default function Confirm(props) {
       <h1 className="text--semi-bold">{props.message}</h1>
       <section className="appointment__actions">
         <Button danger onClick={cancelAction}>Cancel</Button>
-        <Button danger onClick={confirmDelete}>Confirm</Button>
+        <Button danger onClick={confirmDelete} alt="Confirm">Confirm</Button>
       </section>
     </main>
   );

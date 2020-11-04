@@ -42,8 +42,8 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
-    transition(SAVING);
     destroy(props.id);
+    transition(SAVING);
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
@@ -71,7 +71,10 @@ export default function Appointment(props) {
   }
 
   return(
-    <article className="appointment">
+    <article
+    className="appointment"
+    data-testid="appointment"
+    >
       <Header time={props.time}/>
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
@@ -123,6 +126,12 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE && (
         <Error
           message={"Could not cancel appointment"}
+          onBack={back}
+        />
+      )}
+      {mode === ERROR_SAVE && (
+        <Error
+          message={"Could not save appointment"}
           onBack={back}
         />
       )}
