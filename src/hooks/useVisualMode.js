@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
+// These functions change the "mode" that a appointment card is currently on, along with its history
 
 const useVisualMode = (initial) => {
   const [mode, setMode] = useState(initial);

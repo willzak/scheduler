@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// These functions create and alter state of interviews, as well as make axios requests to the DB
+
 const useApplicationData = () => {
 
   const [state, setState] = useState({
@@ -18,7 +20,7 @@ const useApplicationData = () => {
     ]).then((all) => {
       setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
     }).catch(err => console.log(err))
-  }, [state.appointments])
+  }, [state.appointments]) // will update the spots available when the appointments change
   
   const setDay = day => setState({ ...state, day });
 

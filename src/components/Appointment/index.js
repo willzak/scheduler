@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import './styles.scss';
 
@@ -11,6 +11,7 @@ import Status from './Status';
 import Confirm from './Confirm';
 import Error from './Error';
 
+// Modes available for appointment card views
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
