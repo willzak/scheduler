@@ -42,4 +42,12 @@ npm run storybook
 
 ## 📸 Final Product 
 
+### Functionality 
+
 !["Check it out!"](https://media.giphy.com/media/1CGq1nd3Vlj8t38eaZ/giphy.gif)
+
+### Up Close
+
+!["Edit Form"](https://github.com/willzak/scheduler/blob/master/public/images/create-form.png?raw=true)
+
+!["View Form"](https://github.com/willzak/scheduler/blob/master/public/images/complete-form.png?raw=true)
