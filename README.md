@@ -10,7 +10,7 @@ Functionalities Include:
   - Axios get, put, and delete requests
   - Testing using Jest and Cypress
 
-This project was a part of the !["Lighthouse Labs"](https://www.lighthouselabs.ca/) Web Dev Bootcamp, React work was written by me and CSS was provided by LHL.
+This project was a part of the Lighthouse Labs Web Dev Bootcamp, React work was written by me and CSS was provided by LHL.
 
 ## Dependencies
 
