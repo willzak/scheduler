@@ -10,6 +10,8 @@ export default function Show(props) {
     props.onEdit();
   }
 
+  console.log("SHOW", props)
+
   return(
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">

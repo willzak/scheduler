@@ -29,6 +29,10 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
+
+    if (interviewer === null) {
+      return transition(ERROR_SAVE)
+    }
     
     transition(SAVING);
 
@@ -36,19 +40,6 @@ export default function Appointment(props) {
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
       .catch(error => transition(ERROR_SAVE, true))
-  }
-
-  function saveEdit(name, interviewer) {
-    const interview = {
-      student: name,
-      interviewer
-    };
-    destroy(props.id);
-    transition(SAVING);
-    props
-      .bookInterview(props.id, interview)
-      .then(() => transition(SHOW))
-      .catch(error => transition(ERROR_DELETE, true));
   }
 
   function destroy(event) {
@@ -120,7 +111,7 @@ export default function Appointment(props) {
         name={props.interview.student}
         interviewer={props.interview.interviewer.id}
         interviewers={props.interviewers}
-        onSave={saveEdit}
+        onSave={save}
         onCancel={back}
         />
       )}

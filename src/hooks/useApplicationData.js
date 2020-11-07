@@ -39,7 +39,7 @@ const useApplicationData = () => {
       url: `/api/appointments/${id}`,
       method: 'PUT',
       data: appointment
-    }).catch(err => console.log(err))
+    })
   
     setState({...state, appointments});
   
